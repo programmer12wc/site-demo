@@ -40,7 +40,7 @@ export default function Home() {
 
   const single_blog = () => {
     axios
-      .get(`https://www.amiiboapi.com/api/amiibo?character=${current_url}`)
+      .get(`https://amiiboapi.com/api/amiibo/?character=${current_url}`)
       .then((response) => {
         if (response.data) {
           console.log(response.data.amiibo[0]);
