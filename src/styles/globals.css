@@ -1,0 +1,1089 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('/assets/fonts/ProximaNova-Black.eot');
+    src: url('/assets/fonts/ProximaNova-Black.eot?#iefix') format('embedded-opentype'),
+    url('/assets/fonts/ProximaNova-Black.woff2') format('woff2'),
+    url('/assets/fonts/ProximaNova-Black.woff') format('woff'),
+    url('/assets/fonts/ProximaNova-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('/assets/fonts/ProximaNova-Extrabld.eot');
+    src: url('/assets/fonts/ProximaNova-Extrabld.eot?#iefix') format('embedded-opentype'),
+    url('/assets/fonts/ProximaNova-Extrabld.woff2') format('woff2'),
+    url('/assets/fonts/ProximaNova-Extrabld.woff') format('woff'),
+    url('/assets/fonts/ProximaNova-Extrabld.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('/assets/fonts/ProximaNova-Bold.eot');
+    src: url('/assets/fonts/ProximaNova-Bold.eot?#iefix') format('embedded-opentype'),
+    url('/assets/fonts/ProximaNova-Bold.woff2') format('woff2'),
+    url('/assets/fonts/ProximaNova-Bold.woff') format('woff'),
+    url('/assets/fonts/ProximaNova-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('/assets/fonts/ProximaNova-Light.eot');
+    src: url('/assets/fonts/ProximaNova-Light.eot?#iefix') format('embedded-opentype'),
+    url('/assets/fonts/ProximaNova-Light.woff2') format('woff2'),
+    url('/assets/fonts/ProximaNova-Light.woff') format('woff'),
+    url('/assets/fonts/ProximaNova-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('/assets/fonts/ProximaNova-Regular.eot');
+    src: url('/assets/fonts/ProximaNova-Regular.eot?#iefix') format('embedded-opentype'),
+    url('/assets/fonts/ProximaNova-Regular.woff2') format('woff2'),
+    url('/assets/fonts/ProximaNova-Regular.woff') format('woff'),
+    url('/assets/fonts/ProximaNova-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('/assets/fonts/ProximaNova-Semibold.eot');
+    src: url('/assets/fonts/ProximaNova-Semibold.eot?#iefix') format('embedded-opentype'),
+    url('/assets/fonts/ProximaNova-Semibold.woff2') format('woff2'),
+    url('/assets/fonts/ProximaNova-Semibold.woff') format('woff'),
+    url('/assets/fonts/ProximaNova-Semibold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+ font-family: 'Proxima Nova';
+ src: url('/assets/fonts/ProximaNovaT-Thin.eot');
+ src: url('/assets/fonts/ProximaNovaT-Thin.eot?#iefix') format('embedded-opentype'),
+ url('/assets/fonts/ProximaNovaT-Thin.woff2') format('woff2'),
+ url('/assets/fonts/ProximaNovaT-Thin.woff') format('woff'),
+ url('/assets/fonts/ProximaNovaT-Thin.ttf') format('truetype');
+ font-weight: 100;
+ font-style: normal;
+ font-display: swap;
+}
+
+
+@layer base {
+    .all-btn{
+        @apply rounded-1.5 flex items-center justify-center text-[16px] sm:text-lg font-bold bg-yellow-900 hover:bg-green-900 text-green-900 py-2 2xl:py-2.5 px-6 2xl:px-7 transition-all duration-500 mx-auto max-w-max hover:text-white;
+    }
+    .customer-review .swiper-pagination{
+        @apply order-2 static mt-4 sm:mt-8;
+    }
+    /*.customer-review .swiper-slide.swiper-slide-prev{
+        @apply translate-x-full scale-y-75 py-12 px-6 z-1 -translate-y-4;
+    }
+    .customer-review .swiper-slide.swiper-slide-next{
+        @apply -translate-x-full scale-y-90 py-8 px-10 z-2 -translate-y-2;
+    }
+    .customer-review .swiper-slide.swiper-slide-active{
+        @apply py-6 px-14 z-3;
+    }*/
+    .customer-review .swiper-pagination .swiper-pagination-bullet{
+        @apply w-3 h-3 rounded-full border-2 border-yellow-900 bg-white opacity-100
+    }
+    .customer-review .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active{
+        @apply bg-yellow-900;
+    }
+    .swiper.new-arrival {
+        @apply py-4;
+    }
+    .new-arrival .swiper-wrapper{
+        @apply pb-16 sm:pb-0;
+    }
+    .new-arrival .swiper-wrapper .swiper-slide{
+        @apply pt-20 transition-all;
+    }
+    .new-arrival .swiper-wrapper .swiper-slide{
+        transition: all 0.3s ease;
+    }
+    .new-arrival .swiper-wrapper .swiper-slide.swiper-slide-next{
+        @apply pt-0
+    }
+    .new-arrival .swiper-wrapper .swiper-slide.swiper-slide-next + .swiper-slide{
+        @apply xl:pt-0
+    }
+    .new-arrival .swiper-button-prev{
+        @apply left-1/2 -ml-40 -ml-[3rem] sm:left-full lg:left-1/2 sm:-ml-40 lg:-ml-[4rem]
+    }
+    .new-arrival .swiper-button-next{
+        @apply right-1/2 -mr-[3rem] sm:-mr-[0rem] sm:right-5 lg:right-1/2 lg:-mr-[4rem]
+    }
+    .new-arrival .swiper-button-prev,
+    .new-arrival .swiper-button-next{
+        @apply bg-white hover:bg-yellow-900 bg-green-800  text-white rounded-md sm:w-[55px] w-[40px] h-[30px] sm:h-[35px] flex justify-center items-center shadow-btn top-full -mt-14 transition-all duration-500;
+    }
+    .new-arrival .swiper-button-prev:after{
+        content: '\f177';
+        font-size: 20px;
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+    }
+    .new-arrival .swiper-button-next:after{
+        content: '\f178';
+        font-size: 20px;
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+    }
+    .swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled{
+        @apply opacity-60;
+    }
+
+    .top-downloads-slider{
+        @apply px-5 !important;
+    }
+    .top-downloads-slider .swiper-slide .group, .new-arrival .swiper-slide .group{ 
+        @apply shadow-none;
+    }
+    .top-downloads-slider .swiper-slide.swiper-slide-visible .group, .new-arrival .swiper-slide.swiper-slide-visible .group{ 
+        @apply shadow-box;
+    }
+    .top-downloads-slider{
+        @apply -mx-2 !important;
+    }
+    .top-downloads-slider .swiper-button-prev{
+        @apply -ml-0
+    }
+    .top-downloads-slider .swiper-button-next{
+        @apply -mr-0
+    }
+    .top-downloads-slider .swiper-button-prev,
+    .top-downloads-slider .swiper-button-next{
+        @apply bg-white hover:bg-yellow-900 hover:text-green-900 text-white  rounded bg-green-800 sm:w-[40px] w-[30px] h-[30px]  sm:h-[40px] flex justify-center items-center shadow-btn transition-all duration-500;
+    }
+    .top-downloads-slider .swiper-button-prev:after{
+        content: '\f053';
+        font-size: 14px;
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+    }
+    .top-downloads-slider .swiper-button-next:after{
+        content: '\f054';
+        font-size: 14px;
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+    }
+    .dropdown_menu .group.catActive.active span{
+        @apply bg-white;   
+    }
+
+    .breadcrumb li:before{
+        content: '\f101';
+        font-size: 10px;
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        margin-right: 10px;
+    }
+    .breadcrumb li:first-child:before{
+        @apply hidden;
+    }
+    .templates-list .templates-box:nth-of-type(3n){
+        @apply lg:ml-10 2xl:ml-16;
+    }
+    .filter-menu li{
+        @apply border border-[#d0e2db] lg:-mr-[1px] border-b-0 lg:border-b hover:bg-green-900 hover:text-white transition-all duration-500 hover:border-green-900
+    }
+    .filter-menu li:last-child{
+        @apply lg:border-l-0 mr-[0px]
+    }
+    .filter-menu li:first-child{
+        @apply lg:rounded-t-[4px] lg:rounded-tr-[0px] lg:rounded-l-[4px]
+    }
+    .filter-menu li:last-child{
+        @apply lg:rounded-b-[4px] lg:rounded-b-[0px] lg:rounded-r-[4px] border-b
+    }
+    .filter-menu li.active{
+        @apply bg-green-900 text-white border-green-900
+    }
+    .categories-left-menu>li{
+        @apply px-2 relative flex items-center justify-between font-normal mb-4 flex-wrap
+    }
+    /*.categories-left-menu>li:before{
+        content: '\f105';
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+    }*/
+    .categories-left-menu-li:before{
+        content: '\f105';
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+    }
+
+    footer .menu-link a.active{
+        @apply text-yellow-900
+    }
+    /*.categories-left-menu>li.avtive:before{
+        content: '\f107';
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+    }*/
+    .categories-left-menu-li.active:before{
+        content: '\f107';
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+    }
+    .categories-left-menu>li:before{
+        @apply text-[11px] absolute left-0 top-0.5 text-green-900
+    }
+    .categories-left-menu li ul{
+        @apply w-full pt-4
+    }
+    .categories-left-menu li ul li{
+        @apply mb-3 flex items-center justify-between font-normal
+    }
+    .checkbox-field{
+        @apply text-gray-100 text-md font-normal hover:text-green-900 cursor-pointer relative pl-7
+    }
+    .checkbox-field input{
+        @apply opacity-0 absolute
+    }
+    .checkbox-field .checkmark{
+        @apply absolute left-0 top-0.5 w-4 h-4 border border-[#c9cfcd] rounded-sm bg-white
+    }
+    .checkbox-field input:checked ~ .checkmark {
+        @apply bg-green-800 border-green-800
+    }
+    .checkbox-field .checkmark:after{
+        content: '\f00c';
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+    }
+    .checkbox-field .checkmark:after{
+        @apply absolute top-[1.2px] left-[2px] text-white text-[11px] leading-none hidden
+    }
+    .checkbox-field input:checked ~ .checkmark:after{
+        @apply block
+    }
+    .sidebar-box{
+        @apply overflow-y-auto overflow-x-hidden max-h-[205px]
+    }
+    .sidebar-box::-webkit-scrollbar {
+        @apply bg-green-300 w-[3px]
+    }
+    .sidebar-box::-webkit-scrollbar-thumb {
+        @apply bg-green-800
+    }
+    .list-disc-wrap li{
+        @apply relative
+    }
+    .list-disc-wrap li:before{
+        content: '';
+    }
+    .list-disc-wrap li:before{
+        @apply absolute -left-5 top-1.5 bg-green-800 w-1.5 h-1.5 rounded-full block
+    }
+    .mobile-list-disc, .mobile-list-disc p, .mini-cart .cart-item-h .pro-name a{
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .right-sidebar-box .checkbox-field .checkmark{
+        @apply absolute left-0  w-5 h-5 border-0 rounded-full
+    }
+    .right-sidebar-box .checkbox-field input:checked ~ .checkmark {
+        @apply bg-white
+    }
+    .right-sidebar-box .checkbox-field .checkmark:after{
+        content: '';
+    }
+    .right-sidebar-box .checkbox-field .checkmark:after{
+        @apply absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 leading-none w-3 h-3 bg-green-800 rounded-full;
+    }
+    .sitemap-link ul li a,
+    .ul-list-custom li{
+        @apply pl-6 relative
+    }
+    .sitemap-link ul li a:before,
+    .ul-list-custom li:before{
+        @apply text-green-800 absolute left-0 top-1 text-[12px]
+    }
+    .ul-list-custom li:before{
+        content: '\f101';
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+    }
+    .sitemap-link ul li a:before{
+        content: '\f111';
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+            line-height: 1.5;
+    }
+    .sitemap-link ul li ul li a:before{
+        content: '\f111';
+        font-family: "Font Awesome 6 Free";
+        font-weight: 400;
+    }
+
+    .single-product-contacnt{
+        @apply py-8 md:py-10 mt-7 text-black md:mt-10 border-t border-[#eeeeee]
+    }
+
+    .single-product-contacnt img{
+        @apply mt-0 mb-0 md:mb-0
+    }
+    .single-product-contacnt .image div{
+        @apply hidden
+    }
+    .single-product-contacnt hr{
+        @apply border-[#eeeeee] my-8 md:my-12
+    }
+    .single-product-contacnt h2{
+        @apply font-bold text-xl md:text-3xl text-green-900 mb-5 md:mb-7
+    }
+    .single-product-contacnt h3{
+        @apply font-bold text-xl md:text-2xl text-green-900 mb-5 md:mb-7
+    }
+    .single-product-contacnt h4{
+        @apply font-bold text-lg md:text-xl text-green-900 mb-5 md:mb-7
+    }
+    .single-product-contacnt h5{
+        @apply font-bold text-md sm:text-lg text-green-900 mb-3
+    }
+    .single-product-contacnt ul{
+        @apply text-gray-100 mb-7 md:mb-10
+    }
+    .single-product-contacnt ul li{
+        @apply pl-6 relative mb-2 text-black
+    }
+    .single-product-contacnt ul li:before{
+        @apply text-green-800 absolute left-0 top-1 text-[12px]
+    }
+    .single-product-contacnt ul li:before{
+        content: '\f101';
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+    }
+    .sticky-bar{
+        @apply -top-full
+    }
+    .sticky-bar.is-sticky{
+        @apply top-0
+    }
+    .comments-box .comments-reply{
+        @apply border-t border-gray-400
+    }
+    .comments-box .comments-reply:first-child{
+        @apply border-none
+    }
+    .reviews-list .reviews-box{
+        @apply border-t border-gray-400
+    }
+    .reviews-list .reviews-box:first-child{
+        @apply border-none
+    }
+    .blog-detail-wrap p{
+        @apply mb-8
+    }
+    .blog-detail-wrap h2{
+        @apply text-3xl lg:text-4xl text-green-900 font-bold mb-4 leading-tight pt-5;
+    }
+    .blog-detail-wrap img{
+        @apply my-6 sm:my-12
+    }
+    .blog-detail-wrap blockquote{
+        @apply sm:mb-6 py-6
+    }
+    .blog-detail-wrap blockquote:before{
+        content: '\f10d';
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+    }
+    .blog-detail-wrap blockquote:before{
+        @apply text-green-800 text-3xl lg:text-4xl mb-6 block
+    }
+    .blog-detail-wrap blockquote p{
+        @apply text-xl sm:text-2xl text-green-900 font-bold mb-8;
+    }
+    .blog-detail-wrap blockquote .blockquote-footer{
+        display: flex;
+        align-items: center;
+    }
+    .blog-detail-wrap .blockquote-footer .blockquote-user{
+        @apply w-[50px] h-[50px] sm:w-[70px] sm:h-[70px] shrink-0 rounded-full mr-4 overflow-hidden
+    }
+    .blog-detail-wrap .blockquote-footer .blockquote-user img{
+        @apply w-full h-full object-cover m-0
+    }
+    .blog-detail-wrap blockquote .blockquote-info cite{
+        @apply text-lg text-green-900 font-bold mb-1 not-italic;
+    }
+    .blog-detail-wrap blockquote .blockquote-info span{
+        @apply text-md text-gray-100 font-light mb-0 block not-italic;
+    }
+    .grid-blog-img img{
+        @apply rounded-4xl 
+    }
+    input#user_profile::-webkit-file-upload-button{
+        cursor: pointer;
+    }
+    .input-field[readonly]{
+        @apply text-gray-200 cursor-no-drop
+    }
+    .input-field{
+        @apply w-full block bg-white placeholder:text-gray-100 rounded-md border-2 border-[#e8f3ef] shadow-input py-2 sm:py-2.5 px-4 text-md font-light text-green-800
+    }
+    .input-field.required{
+        @apply border-[#d30e0e]
+    }
+
+    .input-field:focus-visible {
+        outline:0;
+        border-color: #c9e1da;
+    }
+    .checkbox-field.remember-me{
+        @apply pl-8 
+    }
+    .checkbox-field.remember-me .checkmark{
+        @apply w-5 h-5 top-0.5 bg-white border-[#d9e5e1]
+    }
+    .checkbox-field.remember-me .checkmark:after{
+        @apply text-sm -top-[1px] left-[3px]
+    }
+
+    .checkbox-field.select-payment-field{
+        @apply pl-8
+    }
+    .checkbox-field.select-payment-field .checkmark{
+        @apply w-5 h-5 top-1 border-2 bg-green-400 border-green-100 rounded-full
+    }
+    .checkbox-field.select-payment-field input:checked ~ .checkmark{
+        @apply bg-green-400 border-green-800
+    }
+    .checkbox-field.select-payment-field .checkmark:after{
+        content: '';
+    }
+    .checkbox-field.select-payment-field .checkmark:after{
+        @apply text-sm top-1 left-1 w-2 h-2 rounded-full bg-green-800
+    }
+    select.input-field{
+        background-image: url('/public/assets/img/angle-down-solid.svg');
+        background-position: center right 15px;
+        background-repeat: no-repeat;
+        background-size: 12px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+    select::-ms-expand {
+        display: none;
+    }
+   /* table.account-table tr th{
+        @apply bg-green-300 border-b-0 py-3 px-2 lg:px-3 xl:px-4 text-black text-md xl:text-lg 
+    }
+    .account-table tr th,
+    .account-table tr td{
+        @apply border border-[#e3ebe8] text-center
+    }*/
+    .account-table tr td{
+        @apply text-green-800 font-semibold px-3  py-3 px-2 lg:px-3 xl:px-4
+    }
+    .account-table tr td{
+        @apply text-green-800 font-semibold
+    }
+    .account-table tr th.product-account,
+    .account-table tr td.product-account{
+        @apply md:text-left
+    }
+    .account-table tr td.expires-account{
+        @apply text-green-900 font-normal
+    }
+    .account-table tr td .all-btn{
+        @apply py-2 2xl:px-8 px-4 bg-green-800 text-white hover:text-green-900 hover:bg-yellow-900
+    }
+    .account-table tr td.border-remove-l{
+        @apply md:border-l-0
+    }
+    .account-table tr td.border-remove-r{
+        @apply border-r-0
+    }
+    .account-table tr.table-footer{
+        @apply bg-green-300
+    }
+    .account-table.thank-you-table tr th,
+    .account-table.thank-you-table tr td{
+        @apply text-left py-1 pl-0 relative
+    }
+    .account-table.thank-you-table{
+        @apply border border-[#e3ebe8]
+    }
+    .account-table.thank-you-table tbody tr:last-child td:last-child, .account-table tbody tr:last-child td:last-child{
+        @apply rounded-br-2xl 
+    }
+    .account-table.thank-you-table tbody tr:last-child td:first-child, .account-table tbody tr:last-child td:first-child{
+        @apply rounded-bl-2xl 
+    }
+    .account-table.thank-you-table tr th:not(:last-child):after, .account-table.thank-you-table tr td:not(:last-child):after {
+        content: '';
+        display: inline-block;
+        width: 1px;
+        height: 100%;
+        background: #e3ebe8;
+        position: absolute;
+        right: 15%;
+        top: 0;
+            font-size: 85%;
+    }
+    .available-downloads td.download-rating div.customer-review-input, .available-downloads td.download-rating .rate > div {
+        padding: 0;
+    }
+    .available-downloads .customer-review-input span, .customer-review-input span {
+        font-family: system-ui, color-emoji;
+        font-size: 22px !important;
+        letter-spacing: 1px;
+    }
+    table.account-table.available-downloads th, table.account-table.order-tabs-table th, .account-table.order-detail-table th{
+        @apply bg-green-300 px-5 py-3 md:py-4 text-lg
+    }
+    .account-table.wishlist-table th{
+        @apply bg-green-300 px-3 xl:px-5 py-3 md:py-4 text-md xl:text-lg
+    }
+    .account-table.wishlist-table td{
+        @apply px-3 xl:px-5 py-3 md:py-4
+    }
+    table.account-table.available-downloads td.downloads-version-date{
+        @apply text-center
+    }
+    .account-table.order-detail-table td.product-account, .account-table.order-detail-table th.product-account{
+        @apply text-left
+    }
+    table.account-table.order-tabs-table td, table.account-table.order-tabs-table th, .account-table.order-detail-table td, .account-table.order-detail-table th{
+        @apply text-center
+    }
+    .account-table.available-downloads tr td, table.account-table.order-tabs-table td,.account-table.order-detail-table td{
+        @apply px-5 py-3 md:py-4
+    }
+    .available-downloads td.download-rating div {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .available-downloads td.download-rating div span {
+        line-height: 1.2;
+    }
+    .account-table{
+        margin: -1px;
+        width: calc(100% + 2px);
+        border-spacing: 0;
+    }
+    .account-table.wishlist-table tr th,
+    .account-table.wishlist-table tr td{
+        @apply text-left
+    }
+    .account-table.wishlist-table tr th.center-text,
+    .account-table.wishlist-table tr td.center-text{
+        @apply text-right md:text-center
+    }
+   
+    .account-table.wishlist-table tr td .all-btn{
+        @apply  text-[16px] lg:text-lg hover:text-green-900 hover:bg-yellow-900
+    }
+    .account-table .order-completed .wc-failed{
+        @apply bg-[#ffdae6] border border-[#fd397a] text-[#fd397a] text-[15px] rounded-md px-3 sm:px-4 py-[3px] sm:py-[5px]
+    }
+    .account-table .order-completed .wc-success{
+        @apply bg-[#d9f5ed] border border-[#0abb87] text-[#0abb87] text-[15px] rounded-md px-3 sm:px-4 py-[3px] sm:py-[5px]
+    }
+    .account-table .order-completed .wc-pending,.account-table .wc-paynow{
+        @apply bg-[#fffaef] border border-[#ffad00] text-[#ffad00] text-[15px] rounded-md px-3 sm:px-4 py-[3px] sm:py-[5px]
+    }
+    .account-table .wc-paynow{
+        @apply hover:text-green-800 hover:border-green-800 hover:bg-green-400
+    }
+    .account-table .order-completed .wc-pending-payment{
+        @apply bg-[#ffeae7] inline-block border border-[#ff4122] text-[#ff4122] text-[15px] rounded-md px-3 sm:px-4 py-[3px] sm:py-[5px]
+    }
+    .account-table .order-completed .wc-refund{
+        @apply bg-[#dbebfb] border border-[#2a6097] text-[#2a6097] text-[15px] rounded-md px-3 sm:px-4 py-[3px] sm:py-[5px]
+    }
+    .tabs_list{
+        @apply border-b border-green-100 flex mb-5 sm:mb-8 md:mb-10
+    }
+    .tabs_list .tabs_list_tabs{
+        @apply pb-2.5 px-4 md:px-6 font-semibold text-md h-full sm:text-lg border-b-2 border-transparent hover:border-green-800 hover:text-green-800 block focus:outline-none cursor-pointer
+    }
+    .tabs_list .tabs_list_tabs.react-tabs__tab--selected{
+        @apply border-green-800 text-green-800  border-b-2
+    }
+    .tabs_list .tabs_list_tabs:last-child{
+        @apply mr-0
+    }
+    .tabs_list_tabs.all-btn {
+        @apply border-b-0 px-8 py-2 mb-2 hover:text-white -mt-1.5 flex
+    }
+
+
+    .my-account-menu:before{
+        content: '';
+        width: 0; 
+        height: 0; 
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid #fff;
+        position: absolute;
+        top: 2px;
+        right: 26px;
+    }
+    .my-account-menu ul li{
+        @apply border-b border-[#eef6f3]
+    }
+    .my-account-menu ul li:last-child{
+        @apply border-0
+    }
+
+    .cms-inner-page h2{
+        @apply text-xl lg:text-[30px] text-green-900 font-bold mb-1.5 leading-tight sm:mt-5 mt-3
+    }
+    .cms-inner-page h3{
+        @apply text-xl lg:text-2xl text-green-900 font-bold sm:mt-5 mt-3 mb-1.5 leading-tight
+    }
+    .cms-inner-page h4{
+        @apply text-lg lg:text-xl text-green-900 font-bold mt-4 mb-1.5 leading-tight
+    }
+    .cms-inner-page h6{
+        @apply text-black text-md md:text-xl mb-1
+    }
+    .cms-inner-page p{
+        @apply mb-1.5 sm:text-lg text-md text-[#333333]
+    }
+    .cms-inner-page ul li, .cms-inner-page ol li{
+         @apply mb-1 sm:text-lg text-md text-[#333333] pl-6 relative
+    }
+    .cms-inner-page .ul-list-custom{
+        @apply grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 my-10 font-semibold text-green-900
+    }
+    .input-form {
+        @apply bg-[#f7f7f7] rounded-xl p-2.5 flex border border-[#f7f7f7] hover:border-green-100 w-full text-green-900 focus:outline-none;
+    }
+    textarea.input-form{
+        @apply h-[150px] resize-none
+    }
+    .sitemap-link ul{
+        @apply px-6 py-3
+    }
+    .cms-inner-page .sitemap-link ul li:before{
+        @apply hidden
+    }
+    .sitemap-link ul li{
+        @apply mb-2 pl-0
+    }
+    .sitemap-link ul li:last-child{
+        @apply mb-0
+    }
+    .sitemap-link ul li a{
+        @apply font-medium text-green-900 hover:text-yellow-900
+    }
+    .custom-error{
+        @apply text-[#d30e0e] text-[15px]
+    }
+    .custom-error i{
+        font-size: 90%;
+    }
+    .checkmark.invalid{
+        @apply border-[#d30e0e]
+    }
+    .shadow-box-body{
+        box-shadow: 4px 0 20px rgba(0, 53, 51, 0.07);
+    }
+    .grid-box .react-loading-skeleton{
+        display: block !important;
+    }
+    .swal2-container.swal2-center>.swal2-popup{
+        border-radius: 0;
+    }
+    .swal2-container .swal2-popup .swal2-title{
+        @apply font-medium text-green-900 text-md
+    }
+    figcaption.ck-editor__editable.ck-editor__nested-editable.ck-placeholder.ck-hidden {
+        display: none !important;
+    }
+
+    .desc-tab-section .swiper-slide{
+        width: auto !important;
+    }
+    .desc-tab-section .swiper-button-prev{
+        @apply absolute top-0 left-0 m-0 flex items-center justify-center bg-gradient-to-r from-green-300 to-white/80 h-full w-[30px]
+    }
+    .desc-tab-section .swiper-button-next{
+        @apply absolute top-0 right-0 m-0 flex items-center justify-center bg-gradient-to-l from-green-300 to-white/80 h-full w-[30px]
+    }
+    .desc-tab-section .swiper-button-next:after, .desc-tab-section .swiper-button-prev:after {
+        font-size: 16px;
+        color: #000;
+        font-weight: 900;
+    }
+    .desc-tab-section .swiper-button-next.swiper-button-disabled, .desc-tab-section .swiper-button-prev.swiper-button-disabled {
+        @apply hidden
+    }
+    .list-disc-wrap ul {
+        @apply pl-5
+    }
+    .list-view-skeleton .react-loading-skeleton{
+        @apply block
+    }
+    .grid-view-skeleton .react-loading-skeleton{
+        width: 100% !important;
+    }
+    .blog-grid-skeleton .react-loading-skeleton{
+        width: 100% !important;
+        height: 100% !important;
+        display: block;
+    }
+    .all-width-full .react-loading-skeleton{
+        width: 100% !important;
+    }
+    .account-table .all-width-full{
+        width: 100% !important;
+    }
+    .swal2-icon{
+        @apply border-green-800
+    }
+    .cart-item-h {
+
+    }
+    /*.sticky-header{
+        @apply rounded-b-4xl sm:rounded-b-[50px]
+    }*/
+    .sticky-header.header-sticky{
+        @apply fixed z-30 rounded-b-4xl lg:rounded-b-[50px]
+    }
+    .cart-item-h:before{
+        content: '';
+        position: absolute;
+        transition:all 0.3s ease;
+        top: 0;
+        left: auto;
+        right: 0;
+        width: 0;
+        z-index: 1;
+        height: 100%;
+        background: #004643;
+    }
+    .cart-item-h.active:before{
+        width: 100%;
+        left: auto;
+        right: 0;
+    }
+    .cart-item-h.active .cart-item-section{
+        opacity: 0;
+    }
+    .cart-item-h:before{
+        width: 0;
+        left: 0;
+        right: auto;
+    }
+    .button-hover{
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+    }
+
+    .account-table tr td .all-btn:before,
+    .button-hover:before{
+        content: "";
+        width: 0;
+        bottom: 0;
+        position: absolute;
+        left: auto;
+        z-index: -1;
+        right: 0;
+        transition:all 0.7s ease;
+        height: 100%;
+        background: #f9bc60;
+    }
+    .account-table tr td .all-btn:hover:before,
+    .button-hover:hover:before{
+       /* width: 100%;
+        left: 0;
+        right: auto;*/
+    }
+    .button-hover-green,
+    .all-btn{
+        overflow: hidden;
+        position: relative;
+        z-index: 1; 
+    }
+    .button-hover-green:before,
+    .all-btn:before{
+        content: "";
+        width: 0;
+        bottom: 0;
+        position: absolute;
+        left: auto;
+        z-index: -1;
+        right: 0;
+        transition:all 0.7s ease;
+        height: 100%;
+        background: #001e1d;
+    }
+    .button-hover-green:hover:before,
+    .all-btn:hover:before{
+       /* width: 100%;
+        left: 0;
+        right: auto;*/
+    }
+
+    .product-grid-title, .product-grid-title a, .w-blog h4 a, .templates-box h4 a, .cart-items .cart-item-section h3 a, table.account-table.available-downloads td.downloads-product p, .account-table td.wishlist-product-name a {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: 1.4;
+    }
+    
+
+    
+
+    @media (max-width: 991px){
+        .main-menu ul li a:before{
+            @apply hidden
+        }
+    }
+    @media (max-width: 767px){
+        /*.account-table thead{
+            @apply hidden
+        }
+*/
+        .account-table tr td{
+            @apply flex justify-start items-center text-right p-0;
+        }
+        .account-table tr td,
+        .order-tabs-table tr td,
+        .available-downloads tr td{
+            background: #eef6f3;
+        }
+        .account-table tr td div,
+        .order-tabs-table tr td div,
+        .available-downloads tr td div{
+            background: #fff;
+            padding: 10px;
+            width: 100%;
+            height: 100%;
+            text-align: right;
+            padding: 14px 15px;
+
+        }
+        table.available-downloads tr td > div, table.account-table.order-tabs-table td > div,.account-table.order-detail-table td > div, .account-table.wishlist-table tr td > div{
+            border-bottom:1px solid #eef6f3;
+            text-align: left;
+        }
+        .account-table tr.table-footer td,
+        .account-table tr.inline-td td{
+            @apply table-cell w-full px-3 py-4
+        }
+        .account-table tr.table-footer,
+        .account-table tr.inline-td{
+            @apply flex
+        }
+        table.account-table.empty-cart td {
+            display: table-cell;
+            padding: 0;
+        }
+        .account-table tr.table-footer td.hidden-td,
+        .account-table tr td.hidden-td{
+            @apply hidden
+        }
+        .account-table tr td .all-btn{
+            @apply mr-0
+        }
+        .account-table tr td.product-account:before{
+            content: 'Product';
+        }
+        .account-table tr td.download-filed:before{
+            content: 'Download';
+        }
+        .account-table tr td.expires-filed:before{
+            content: 'Expires';
+        }
+        .account-table tr td.total-filed:before{
+            content: 'Total';
+        }
+        .account-table.thank-you-table td, .account-table.thank-you-table td div{
+            background: transparent;
+            text-align: left;
+            align-items: flex-start;
+            padding-top: 3px;
+            padding-bottom: 3px;
+            line-height: 1.5;
+        }
+        table.account-table.thank-you-table tr td:before{
+            width: 30% ;
+            background-color: transparent ;
+            padding-left: 0 ;
+            padding-top: 3px;
+            padding-bottom: 3px;
+        }
+        .account-table.thank-you-table tr th:not(:last-child):after, .account-table.thank-you-table tr td:not(:last-child):after {
+            display: none;
+        }
+        .account-table.thank-you-table tr td.order-filed:before{
+            content: 'Order Number:';
+        }
+        .account-table.thank-you-table tr td.date-filed:before{
+            content: 'Date:';
+        }
+        .account-table.thank-you-table tr td.total-filed:before{
+            content: 'Total:';
+        }
+        .account-table.thank-you-table tr td.payment-filed:before{
+            content: 'Payment method:';
+        }
+        .account-table.thank-you-table tr td.email-filed:before{
+            content: 'Email:';
+        }
+        .account-table.thank-you-table th, table.account-table.available-downloads th, table.account-table.order-tabs-table th, .account-table.order-detail-table th, .account-table.wishlist-table th{
+            display: none;
+        }
+        .account-table.wishlist-table tr td.wishlist-img-filed:before{
+            content: 'Image';
+        }
+        .account-table.wishlist-table tr td.wishlist-product-name:before{
+            content: 'Product name';
+        }
+        .account-table.wishlist-table tr td.wishlist-instock:before{
+            content: 'Stock status';
+        }
+        .account-table.wishlist-table tr td.wishlist-price:before{
+            content: 'Price';
+        }
+        .account-table.wishlist-table tr td.wishlist-addtocart:before{
+            content: 'Add to cart';
+        }
+        .account-table.wishlist-table tr td.wishlist-remove:before{
+            content: 'Remove';
+        }
+
+        .order-tabs-table tr td.order-name:before{
+            content: 'Order';
+        }
+        .order-tabs-table tr td.order-date:before{
+            content: 'Date';
+        }
+        .order-tabs-table tr td.order-completed:before{
+            content: 'Status';
+        }
+        .order-tabs-table tr td.order-price:before{
+            content: 'Total';
+        }
+        .order-tabs-table tr td.order-view:before{
+            content: 'View'; 
+        }
+        .available-downloads tr td.downloads-product:before{
+            content: 'Product';
+        }
+        .available-downloads tr td.downloads-version:before{
+            content: 'Version';
+        }
+        .available-downloads tr td.downloads-version-date:before{
+            content: 'Version';
+        }
+        .available-downloads tr td.downloads-documentation:before{
+            content: 'Documentation';
+        }
+        .available-downloads tr td.downloads-download:before{
+            content: 'Download'; 
+        }
+        .available-downloads tr td.download-rating:before{
+            content: 'Rating'; 
+        }
+        .account-table.available-downloads tr td,  table.account-table.order-tabs-table td, .account-table.order-detail-table td, .account-table.order-detail-table tr.inline-td td, .account-table.wishlist-table tr td{
+            @apply p-0 text-left
+        }
+        .account-table.order-detail-table tr.inline-td td.expires-account div{
+            @apply bg-green-300
+        }
+        .account-table.wishlist-table tr td{
+            align-items: inherit;
+            justify-content: flex-start;
+        }
+        .account-table.wishlist-table tr td:before{
+            @apply flex justify-start items-center
+        }
+        .account-table.wishlist-table tr td div{
+            @apply flex items-center text-left h-auto
+        }
+        .account-table.wishlist-table tr:nth-child(even) td div {
+            background: #f4fbf9;
+            border-color: #ddede8;
+        }
+        .available-downloads tr td:before,
+        .order-tabs-table tr td:before,
+        .account-table.wishlist-table tr td:before,
+        .account-table.thank-you-table tr td:before,
+        .account-table tr td.total-filed:before,
+        .account-table tr td.expires-filed:before,
+        .account-table tr td.download-filed:before,
+        .account-table tr td.product-account:before{
+            @apply bg-[#ebf5f2] py-2 px-4 lg:px-8 text-black text-md md:text-lg w-2/5 md:w-2/4 leading-tight shrink-0 text-left
+        }
+        .account-table.thank-you-table tbody tr:last-child td:last-child{
+            @apply rounded-br-none 
+        }
+        .account-table.thank-you-table tbody tr:last-child td:first-child{
+            @apply rounded-bl-none 
+        }
+        .new-arrival .swiper-button-next:after, .new-arrival .swiper-button-prev:after{
+            font-size: 18px;
+        } 
+        .tabs_list .tabs_list_tabs{
+            @apply px-3
+        }
+        .tabs_list .tabs_list_tabs.all-btn {
+            @apply px-4
+        }
+
+    }
+}
+
+@media (max-width:575px){
+    .tabs_list .tabs_list_tabs.all-btn{
+        @apply text-[0px]
+    }
+    .tabs_list .tabs_list_tabs.all-btn i{
+        @apply text-[16px] mr-0
+    }
+}
+
+
+body {
+  margin: 0;
+  font-family: 'Proxima Nova', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: 'Proxima Nova', source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  monospace;
+}
+figcaption.ck-editor__editable.ck-editor__nested-editable.ck-placeholder.ck-hidden {
+    display: none;
+}
