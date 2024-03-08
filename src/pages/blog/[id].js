@@ -78,7 +78,7 @@ export default function Home() {
       name: "site-demo",
       alternateName: "site-demo",
       url: "https://site-demo-nine.vercel.app",
-      logo: "https://site-demo-nine.vercel.app/assets/logo/webbytemplate-logo.svg",
+      logo: "https://site-demo-nine.vercel.app/assets/logo/logo.svg",
       sameAs: ["https://site-demo-nine.vercel.app"],
     },
     {
@@ -124,7 +124,7 @@ export default function Home() {
         name: "site-demo",
         logo: {
           "@type": "ImageObject",
-          url: "https://site-demo-nine.vercel.app/assets/logo/webbytemplate-logo.svg",
+          url: "https://site-demo-nine.vercel.app/assets/logo/logo.svg",
         },
       },
       datePublished: `${created_at}`,
@@ -153,7 +153,7 @@ export default function Home() {
             property: "og:url",
             content: "https://site-demo-nine.vercel.app/blog/" + b_slug,
           },
-          { property: "og:site_name", content: "WebbyTemplate" },
+          { property: "og:site_name", content: "site-Demo" },
           { property: "og:image", content: b_image_url },
           { property: "og:image:alt", content: b_name },
           { property: "og:image:width", content: "900" },
@@ -162,8 +162,8 @@ export default function Home() {
           { property: "twitter:image", content: b_image_url },
           { property: "twitter:title", content: b_seo_title },
           { property: "twitter:description", content: b_seo_description },
-          { property: "twitter:site", content: "@WebbyTemplate" },
-          { property: "twitter:creator", content: "@WebbyTemplate" },
+          { property: "twitter:site", content: "@site-Demo" },
+          { property: "twitter:creator", content: "@site-Demo" },
         ]}
         script={[
           {
@@ -208,14 +208,14 @@ export default function Home() {
               "image": "${b_image_url}",  
               "author": {
                 "@type": "Organization",
-                "name": "WebbyTemplate"
+                "name": "site-Demo"
               },  
               "publisher": {
                 "@type": "Organization",
-                "name": "WebbyTemplate",
+                "name": "site-Demo",
                 "logo": {
                   "@type": "ImageObject",
-                  "url": "https://site-demo-nine.vercel.app/assets/logo/webbytemplate-logo.svg"
+                  "url": "https://site-demo-nine.vercel.app/assets/logo/site-Demo-logo.svg"
                 }
               },
               "datePublished": "${created_at}",
@@ -243,15 +243,15 @@ export default function Home() {
           property="og:url"
           content={"https://site-demo-nine.vercel.app/blog/" + b_slug}
         />
-        <meta property="og:site_name" content="WebbyTemplate" />
+        <meta property="og:site_name" content="site-demo" />
         <meta property="og:image:width" content="900" />
         <meta property="og:image:height" content="506" />
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:image" content={b_image_url} />
         <meta property="twitter:title" content={b_seo_title} />
         <meta property="twitter:description" content={b_seo_description} />
-        <meta property="twitter:site" content="@WebbyTemplate" />
-        <meta property="twitter:creator" content="@WebbyTemplate" />
+        <meta property="twitter:site" content="@site-Demo" />
+        <meta property="twitter:creator" content="@site-Demo" />
 
         <script
           type="application/ld+json"
