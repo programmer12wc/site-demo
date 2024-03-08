@@ -370,7 +370,6 @@ export default function Home() {
                             </Link>
                           </h3>
                           <p
-                            dangerouslySetInnerHTML
                             dangerouslySetInnerHTML={{
                               __html:
                                 pro.seo_description.substring(0, 80) + "...",
