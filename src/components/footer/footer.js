@@ -46,12 +46,12 @@ const Footer = () => {
               <div className="mb-5 sm:mb-0">
                 <Link name="white_logo" href="/" className="">
                   <img
-                    src={"/assets/logo/webbytemplate-logo-white.svg"}
+                    src={"/assets/logo/logo-light.svg"}
                     alt={get_url_extension(
-                      "/assets/logo/webbytemplate-logo-white.svg"
+                      "/assets/logo/logo-light.svg"
                     )}
                     title={get_url_extension(
-                      "/assets/logo/webbytemplate-logo-white.svg"
+                      "/assets/logo/logo-light.svg"
                     )}
                     className="mx-auto sm:m-0"
                     width="318"
@@ -69,9 +69,9 @@ const Footer = () => {
                     href="/"
                     className="hover:text-yellow-900 underline"
                   >
-                    WebbyTemplate.com
+                    demo.com
                   </Link>{" "}
-                  owned by WebbyCrown Solutions. All rights reserved.
+                 
                 </p>
               </div>
               <div className="text-white text-center lg:text-right md:text-md text-[15px]">

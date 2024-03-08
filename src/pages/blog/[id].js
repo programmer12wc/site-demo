@@ -39,30 +39,25 @@ export default function Home() {
   const [copied, set_copied] = useState(false);
 
   const single_blog = () => {
-    let params = {
-      token: "A5HFstrolor3upoitxdsqzwod8t7U",
-      blog_id: location.query.id,
-      blgType: 2,
-    };
     axios
-      .post("https://api.webbytemplate.com/v1/test-single-blog", params)
+      .get(`https://www.amiiboapi.com/api/amiibo?character=${current_url}`)
       .then((response) => {
-        if (response.data.result === true) {
-          console.log(response.data.blogs);
-          setSingleblogs(response.data.blogs);
-          set_b_name(response.data.blogs.name);
-          set_b_slug(response.data.blogs.slug);
-          set_b_seo_title(response.data.blogs.seo_title);
-          set_b_seo_description(response.data.blogs.seo_description);
-          set_b_image_url(response.data.blogs.image_url);
-          set_created_at(response.data.blogs.created_date);
-          set_updated_at(response.data.blogs.updated_date);
+        if (response.data) {
+          console.log(response.data.amiibo[0]);
+          setSingleblogs(response.data.amiibo[0]);
+          set_b_name(response.data.amiibo[0].character);
+          set_b_slug(response.data.amiibo[0].character);
+          set_b_seo_title(response.data.amiibo[0].name);
+          set_b_seo_description(response.data.amiibo[0].gameSeries);
+          set_b_image_url(response.data.amiibo[0].image);
+          set_created_at(response.data.amiibo[0].release.au);
+          set_updated_at(response.data.amiibo[0].release.jp);
 
-          const product_id = response.data.blogs.product_id;
+          const product_id = response.data.amiibo[0].head;
           if (product_id) {
-            single_product(response.data.blogs.product_id);
-            set_refrence_desc(response.data.blogs.refrence_desc);
-            set_refrence_title(response.data.blogs.refrence_title);
+            single_product(response.data.amiibo[0].head);
+            set_refrence_desc(response.data.amiibo[0].gameSeries);
+            set_refrence_title(response.data.amiibo[0].character);
           }
         }
       })
@@ -78,7 +73,7 @@ export default function Home() {
       name: "site-demo",
       alternateName: "site-demo",
       url: "https://site-demo-nine.vercel.app",
-      logo: "https://site-demo-nine.vercel.app/assets/logo/logo.svg",
+      logo: "https://site-demo-nine.vercel.app/assets/logo/Blue_Logo.png",
       sameAs: ["https://site-demo-nine.vercel.app"],
     },
     {
@@ -124,7 +119,7 @@ export default function Home() {
         name: "site-demo",
         logo: {
           "@type": "ImageObject",
-          url: "https://site-demo-nine.vercel.app/assets/logo/logo.svg",
+          url: "https://site-demo-nine.vercel.app/assets/logo/Blue_Logo.png",
         },
       },
       datePublished: `${created_at}`,
@@ -141,90 +136,6 @@ export default function Home() {
 
   return (
     <>
-      {/* <Head
-        title={b_seo_title}
-        meta={[
-          { name: "description", content: b_seo_description },
-          { property: "og:locale", content: "en_US" },
-          { property: "og:type", content: "website" },
-          { property: "og:title", content: b_seo_title },
-          { property: "og:description", content: b_seo_description },
-          {
-            property: "og:url",
-            content: "https://site-demo-nine.vercel.app/blog/" + b_slug,
-          },
-          { property: "og:site_name", content: "site-Demo" },
-          { property: "og:image", content: b_image_url },
-          { property: "og:image:alt", content: b_name },
-          { property: "og:image:width", content: "900" },
-          { property: "og:image:height", content: "506" },
-          { property: "twitter:card", content: "summary_large_image" },
-          { property: "twitter:image", content: b_image_url },
-          { property: "twitter:title", content: b_seo_title },
-          { property: "twitter:description", content: b_seo_description },
-          { property: "twitter:site", content: "@site-Demo" },
-          { property: "twitter:creator", content: "@site-Demo" },
-        ]}
-        script={[
-          {
-            name: "BreadcrumbList",
-            type: "application/ld+json",
-            innerHTML: `
-            {
-            "@context": "https://schema.org/", 
-            "@type": "BreadcrumbList", 
-            "itemListElement": [{
-              "@type": "ListItem", 
-              "position": 1, 
-              "name": "Home",
-              "item": "https://site-demo-nine.vercel.app"  
-            },{
-              "@type": "ListItem", 
-              "position": 2, 
-              "name": "Blog",
-              "item": "https://site-demo-nine.vercel.app/blog"  
-            },{
-              "@type": "ListItem", 
-              "position": 3, 
-              "name": "${b_name}",
-              "item": "https://site-demo-nine.vercel.app/blog/${b_slug}"  
-            }]
-          }
-          `,
-          },
-          {
-            name: "Blog",
-            type: "application/ld+json",
-            innerHTML: `
-            {
-              "@context": "https://schema.org",
-              "@type": "Article",
-              "mainEntityOfPage": {
-                "@type": "WebPage",
-                "@id": "https://site-demo-nine.vercel.app/blog/${b_slug}"
-              },
-              "headline": "${b_seo_title}",
-              "description": "${b_seo_description}",
-              "image": "${b_image_url}",  
-              "author": {
-                "@type": "Organization",
-                "name": "site-Demo"
-              },  
-              "publisher": {
-                "@type": "Organization",
-                "name": "site-Demo",
-                "logo": {
-                  "@type": "ImageObject",
-                  "url": "https://site-demo-nine.vercel.app/assets/logo/site-Demo-logo.svg"
-                }
-              },
-              "datePublished": "${created_at}",
-              "dateModified": "${updated_at}"
-            }
-          `,
-          },
-        ]}
-      /> */}
 
       <Head>
         <title>{b_seo_title}</title>
@@ -266,7 +177,7 @@ export default function Home() {
       {/* {singleblogs &&
         singleblogs.map((singleblogs, index) => {
           return ( key={index} */}
-      <div  className="blog-single">
+      <div className="blog-single">
         <div className="px-0 1xl:px-10">
           <section className="bg-green-100 pb-20 pt-8 sm:pt-12 sm:pb-28 text-center sm:text-left rounded-b-4xl sm:rounded-b-5xl ">
             <div className="container mx-auto px-0">
@@ -302,24 +213,7 @@ export default function Home() {
                     </ul>
                   </nav>
                   <div className="flex items-center flex-wrap gap-1 justify-center sm:justify-start">
-                    <div className="text-sm sm:text-md font-normal mr-2 flex items-center">
-                      <span className="mr-2">
-                        <img
-                          src="/assets/img/calendar-clock-outline.svg"
-                          alt="calendar"
-                          title="calendar"
-                        />
-                      </span>{" "}
-                      {Str_replace_with_space(singleblogs.date)}
-                    </div>
-                    <Link
-                      name="blog-category"
-                      href={`/blog/category/${singleblogs.category_slug}`}
-                      className="uppercase text-sm text-green-800 font-bold before:w-[5px] before:h-[5px] before:bg-green-800 before:rounded-full before:mr-2 flex items-center hover:text-yellow-900"
-                      style={{ textTransform: "capitalize" }}
-                    >
-                      {Str_replace_with_space(singleblogs.category_slug)}
-                    </Link>
+                    
                   </div>
                 </div>
 
@@ -335,111 +229,16 @@ export default function Home() {
           <div className="mx-auto relative max-w-[900px] px-6 sm:px-6 ">
             <div className="overflow-hidden before:block bg-white w-full h-full before:pt-[75%] sm:before:pt-[43%] relative rounded-4xl sm:rounded-[50px] lg:min-h-[450px] min-h-auto ">
               <img
-                src={singleblogs.image_url}
-                alt={singleblogs.image_name}
-                title={singleblogs.image_name}
+                src={singleblogs.image}
+                alt={singleblogs.name}
+                title={singleblogs.type}
                 className="absolute top-0 left-0 w-full h-full object-cover"
               />
             </div>
-            <div className="absolute -bottom-5 lg:top-1/2 lg:-translate-y-1/2 lg:right-[-2px] right-[0px] w-full lg:w-auto 2xl:-right-16">
-              <ul className="flex flex-wrap gap-2 sm:gap-5 justify-center lg:max-w-[48px] w-full">
-                <li>
-                  <a
-                    name="facebook"
-                    href={
-                      "https://www.facebook.com/sharer.php?u=" +
-                      "https://site-demo-nine.vercel.app" +
-                      current_url
-                    }
-                    target="_blank"
-                    className="text-green-800 bg-green-300 w-9 h-9 block flex items-center justify-center rounded-full text-lg hover:bg-green-800 hover:text-white"
-                  >
-                    <i className="fa-brands fa-facebook-f"></i>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    name="twitter"
-                    href={
-                      "https://twitter.com/intent/tweet?text=" +
-                      "https://site-demo-nine.vercel.app" +
-                      current_url
-                    }
-                    target="_blank"
-                    className="text-green-800 bg-green-300 w-9 h-9 block flex items-center justify-center rounded-full text-lg hover:bg-green-800 hover:text-white"
-                  >
-                    <i className="fa-brands fa-twitter"></i>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    name="whatsapp"
-                    href={
-                      "https://api.whatsapp.com/send?text=" +
-                      "https://site-demo-nine.vercel.app" +
-                      current_url
-                    }
-                    target="_blank"
-                    className="text-green-800 bg-green-300 w-9 h-9 block flex items-center justify-center rounded-full text-lg hover:bg-green-800 hover:text-white"
-                  >
-                    <i className="fa-brands fa-whatsapp"></i>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    name="linkedin"
-                    href={
-                      "https://www.linkedin.com/shareArticle?url=" +
-                      "https://site-demo-nine.vercel.app" +
-                      current_url
-                    }
-                    target="_blank"
-                    className="text-green-800 bg-green-300 w-9 h-9 block flex items-center justify-center rounded-full text-lg hover:bg-green-800 hover:text-white"
-                  >
-                    <i className="fa-brands fa-linkedin"></i>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    name="pinterest"
-                    href={
-                      "https://pinterest.com/pin/create/button/?url==" +
-                      "https://site-demo-nine.vercel.app" +
-                      current_url +
-                      "&media=" +
-                      b_image_url +
-                      "&description=" +
-                      b_name
-                    }
-                    target="_blank"
-                    className="text-green-800 bg-green-300 w-9 h-9 block flex items-center justify-center rounded-full text-lg hover:bg-green-800 hover:text-white"
-                  >
-                    <i className="fa-brands fa-pinterest"></i>
-                  </a>
-                </li>
-                <li>
-                  <span
-                    name="copy"
-                    className="text-green-800 bg-green-300 w-9 h-9 block flex items-center justify-center rounded-full text-lg hover:bg-green-800 hover:text-white cursor-pointer"
-                  >
-                    <CopyToClipboard
-                      text={"https://site-demo-nine.vercel.app" + current_url}
-                      onCopy={() => set_copied_fun()}
-                    >
-                      <span>
-                        <i className="fa-solid fa-copy"></i>
-                        {copied ? (
-                          <span className="tooltip">Link Copied !</span>
-                        ) : null}
-                      </span>
-                    </CopyToClipboard>
-                  </span>
-                </li>
-              </ul>
-            </div>
+            <div className="absolute -bottom-5 lg:top-1/2 lg:-translate-y-1/2 lg:right-[-2px] right-[0px] w-full lg:w-auto 2xl:-right-16"></div>
           </div>
         </section>
-        <section className="pb-20 lg:pt-0 pt-8 container mx-auto px-0">
+        {/* <section className="pb-20 lg:pt-0 pt-8 container mx-auto px-0">
           <div className="mx-auto max-w-[900px]  sm:px-6 px-6">
             <div
               dangerouslySetInnerHTML={{ __html: singleblogs.description }}
@@ -475,7 +274,7 @@ export default function Home() {
               ""
             )}
           </div>
-        </section>
+        </section> */}
       </div>
       {/* );
         })} */}
