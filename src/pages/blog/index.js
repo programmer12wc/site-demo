@@ -11,7 +11,7 @@ export default function Home() {
 
   const blogs_list = () => {
     axios
-      .get("https://www.amiiboapi.com/api/amiibo")
+      .get("https://amiiboapi.com/api/amiibo/")
       .then((response) => {
         if (response.data) {
           // console.log(response.data);
