@@ -75,11 +75,11 @@ export default function Home() {
     {
       "@context": "https://schema.org",
       "@type": "Organization",
-      name: "Webbytemplate",
-      alternateName: "Webbytemplate",
-      url: "https://webbytemplate.com",
-      logo: "https://webbytemplate.com/assets/logo/webbytemplate-logo.svg",
-      sameAs: ["https://webbytemplate.com"],
+      name: "site-demo",
+      alternateName: "site-demo",
+      url: "https://site-demo-nine.vercel.app",
+      logo: "https://site-demo-nine.vercel.app/assets/logo/webbytemplate-logo.svg",
+      sameAs: ["https://site-demo-nine.vercel.app"],
     },
     {
       "@context": "https://schema.org/",
@@ -89,19 +89,19 @@ export default function Home() {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://webbytemplate.com",
+          item: "https://site-demo-nine.vercel.app",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "Blog",
-          item: "https://webbytemplate.com/blog",
+          item: "https://site-demo-nine.vercel.app/blog",
         },
         {
           "@type": "ListItem",
           position: 3,
           name: `${b_name}`,
-          item: `https://webbytemplate.com/blog/${b_slug}`,
+          item: `https://site-demo-nine.vercel.app/blog/${b_slug}`,
         },
       ],
     },
@@ -110,21 +110,21 @@ export default function Home() {
       "@type": "Article",
       mainEntityOfPage: {
         "@type": "WebPage",
-        "@id": `https://webbytemplate.com/blog/${b_slug}`,
+        "@id": `https://site-demo-nine.vercel.app/blog/${b_slug}`,
       },
       headline: `${b_seo_title}`,
       description: `${b_seo_description}`,
       image: `${b_image_url}`,
       author: {
         "@type": "Organization",
-        name: "WebbyTemplate",
+        name: "site-demo",
       },
       publisher: {
         "@type": "Organization",
-        name: "WebbyTemplate",
+        name: "site-demo",
         logo: {
           "@type": "ImageObject",
-          url: "https://webbytemplate.com/assets/logo/webbytemplate-logo.svg",
+          url: "https://site-demo-nine.vercel.app/assets/logo/webbytemplate-logo.svg",
         },
       },
       datePublished: `${created_at}`,
@@ -151,7 +151,7 @@ export default function Home() {
           { property: "og:description", content: b_seo_description },
           {
             property: "og:url",
-            content: "https://webbytemplate.com/blog/" + b_slug,
+            content: "https://site-demo-nine.vercel.app/blog/" + b_slug,
           },
           { property: "og:site_name", content: "WebbyTemplate" },
           { property: "og:image", content: b_image_url },
@@ -177,17 +177,17 @@ export default function Home() {
               "@type": "ListItem", 
               "position": 1, 
               "name": "Home",
-              "item": "https://webbytemplate.com"  
+              "item": "https://site-demo-nine.vercel.app"  
             },{
               "@type": "ListItem", 
               "position": 2, 
               "name": "Blog",
-              "item": "https://webbytemplate.com/blog"  
+              "item": "https://site-demo-nine.vercel.app/blog"  
             },{
               "@type": "ListItem", 
               "position": 3, 
               "name": "${b_name}",
-              "item": "https://webbytemplate.com/blog/${b_slug}"  
+              "item": "https://site-demo-nine.vercel.app/blog/${b_slug}"  
             }]
           }
           `,
@@ -201,7 +201,7 @@ export default function Home() {
               "@type": "Article",
               "mainEntityOfPage": {
                 "@type": "WebPage",
-                "@id": "https://webbytemplate.com/blog/${b_slug}"
+                "@id": "https://site-demo-nine.vercel.app/blog/${b_slug}"
               },
               "headline": "${b_seo_title}",
               "description": "${b_seo_description}",
@@ -215,7 +215,7 @@ export default function Home() {
                 "name": "WebbyTemplate",
                 "logo": {
                   "@type": "ImageObject",
-                  "url": "https://webbytemplate.com/assets/logo/webbytemplate-logo.svg"
+                  "url": "https://site-demo-nine.vercel.app/assets/logo/webbytemplate-logo.svg"
                 }
               },
               "datePublished": "${created_at}",
@@ -231,7 +231,7 @@ export default function Home() {
         <meta name="description" content={b_seo_description} />
         <link
           rel="canonical"
-          href={`"https://webbytemplate.com/blog/"${current_url}`}
+          href={`"https://site-demo-nine.vercel.app/blog/"${current_url}`}
         />
         <meta property="og:locale" content="en_US" />
         <meta property="og:image" content={b_image_url} />
@@ -241,7 +241,7 @@ export default function Home() {
         <meta property="og:description" content={b_seo_description} />
         <meta
           property="og:url"
-          content={"https://webbytemplate.com/blog/" + b_slug}
+          content={"https://site-demo-nine.vercel.app/blog/" + b_slug}
         />
         <meta property="og:site_name" content="WebbyTemplate" />
         <meta property="og:image:width" content="900" />
@@ -348,7 +348,7 @@ export default function Home() {
                     name="facebook"
                     href={
                       "https://www.facebook.com/sharer.php?u=" +
-                      "https://webbytemplate.com" +
+                      "https://site-demo-nine.vercel.app" +
                       current_url
                     }
                     target="_blank"
@@ -362,7 +362,7 @@ export default function Home() {
                     name="twitter"
                     href={
                       "https://twitter.com/intent/tweet?text=" +
-                      "https://webbytemplate.com" +
+                      "https://site-demo-nine.vercel.app" +
                       current_url
                     }
                     target="_blank"
@@ -376,7 +376,7 @@ export default function Home() {
                     name="whatsapp"
                     href={
                       "https://api.whatsapp.com/send?text=" +
-                      "https://webbytemplate.com" +
+                      "https://site-demo-nine.vercel.app" +
                       current_url
                     }
                     target="_blank"
@@ -390,7 +390,7 @@ export default function Home() {
                     name="linkedin"
                     href={
                       "https://www.linkedin.com/shareArticle?url=" +
-                      "https://webbytemplate.com" +
+                      "https://site-demo-nine.vercel.app" +
                       current_url
                     }
                     target="_blank"
@@ -404,7 +404,7 @@ export default function Home() {
                     name="pinterest"
                     href={
                       "https://pinterest.com/pin/create/button/?url==" +
-                      "https://webbytemplate.com" +
+                      "https://site-demo-nine.vercel.app" +
                       current_url +
                       "&media=" +
                       b_image_url +
@@ -423,7 +423,7 @@ export default function Home() {
                     className="text-green-800 bg-green-300 w-9 h-9 block flex items-center justify-center rounded-full text-lg hover:bg-green-800 hover:text-white cursor-pointer"
                   >
                     <CopyToClipboard
-                      text={"https://webbytemplate.com" + current_url}
+                      text={"https://site-demo-nine.vercel.app" + current_url}
                       onCopy={() => set_copied_fun()}
                     >
                       <span>
