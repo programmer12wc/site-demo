@@ -22,7 +22,7 @@ const Topdownloads = () => {
     //   type: "best_download",
     // };
     axios
-      .get("https://www.amiiboapi.com/api/amiibo")
+      .get("https://amiiboapi.com/api/amiibo/")
       .then((response) => {
         if (response.data) {
           setproducts(response.data.amiibo);
