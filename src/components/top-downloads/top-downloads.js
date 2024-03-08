@@ -7,25 +7,25 @@ import Dummygrid from "@/components/skeleton-product-grid/skeleton-product-grid"
 //Import Utils:
 import axios from "axios";
 import Link from "next/link";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
 
 const Topdownloads = () => {
   const [products, setproducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const products_list = () => {
-    let params = {
-      token: "A5HFstrolor3upoitxdsqzwod8t7U",
-      type: "best_download",
-    };
+    // let params = {
+    //   token: "A5HFstrolor3upoitxdsqzwod8t7U",
+    //   type: "best_download",
+    // };
     axios
-      .post("https://api.webbytemplate.com/v1/product", params)
+      .get("https://www.amiiboapi.com/api/amiibo")
       .then((response) => {
-        if (response.data.result === true) {
-          setproducts(response.data.products);
+        if (response.data) {
+          setproducts(response.data.amiibo);
           setLoading(false);
         }
       })
@@ -85,7 +85,7 @@ const Topdownloads = () => {
                   ))
                 : products.map((pro, index) => (
                     <SwiperSlide className="p-3" key={index}>
-                      <ProductGrid key={index} prod={pro} />
+                      <ProductGrid prod={pro} />
                     </SwiperSlide>
                   ))}
             </Swiper>

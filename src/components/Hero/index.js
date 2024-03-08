@@ -533,7 +533,7 @@ const Hero = () => {
         }
       >
         <div className="container mx-auto px-4 sm:px-8 ">
-          {customize_hero_section(current_url)}
+          {/* {customize_hero_section(current_url)} */}
         </div>
         {category_menu_display(current_url[1])}
       </section>
