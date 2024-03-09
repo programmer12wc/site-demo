@@ -20,7 +20,8 @@
     "react-paginate": "^8.2.0",
     "react-toastify": "^10.0.4",
     "react-use-cart": "^1.13.0",
-    "swiper": "^11.0.7"
+    "swiper": "^11.0.7",
+    "xmlbuilder2": "^3.1.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.1",
