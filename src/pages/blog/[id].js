@@ -142,7 +142,7 @@ export default function Home() {
         <meta name="description" content={b_seo_description} />
         <link
           rel="canonical"
-          href={`"https://site-demo-nine.vercel.app/blog/"${current_url}`}
+          href={"https://site-demo-nine.vercel.app/blog/"+current_url}
         />
         <meta property="og:locale" content="en_US" />
         <meta property="og:image" content={b_image_url} />
