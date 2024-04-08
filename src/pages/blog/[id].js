@@ -21,7 +21,7 @@ const Str_replace_with_space = (value) => {
 
 export default function Home() {
   const location = useRouter();
-  const { asPath } = location;
+  const { pathname } = location;
   const current_url = location.query.id;
 
   const [singleblogs, setSingleblogs] = useState([]);
@@ -43,8 +43,6 @@ export default function Home() {
       .get(`https://amiiboapi.com/api/amiibo/?character=${current_url}`)
       .then((response) => {
         if (response.data) {
-          // console.log(response.data.amiibo[0]);
-          setSingleblogs(response.data.amiibo[0]);
           set_b_name(response.data.amiibo[0].character);
           set_b_slug(response.data.amiibo[0].character);
           set_b_seo_title(response.data.amiibo[0].name);
@@ -52,10 +50,10 @@ export default function Home() {
           set_b_image_url(response.data.amiibo[0].image);
           set_created_at(response.data.amiibo[0].release.au);
           set_updated_at(response.data.amiibo[0].release.jp);
+          setSingleblogs(response.data.amiibo[0]);
 
           const product_id = response.data.amiibo[0].head;
           if (product_id) {
-            // single_product(response.data.amiibo[0].head);
             set_refrence_desc(response.data.amiibo[0].gameSeries);
             set_refrence_title(response.data.amiibo[0].character);
           }
@@ -194,18 +192,18 @@ export default function Home() {
                           <li className="breadcrumb-item mr-2">
                             <Link
                               name="breadcrumb"
-                              href={"/" + current_url}
+                              href={"/" + pathname.split("/")[1]}
                               className="hover:text-yellow-900"
                               style={{ textTransform: "capitalize" }}
                             >
-                              {current_url}
+                              {pathname.split("/")[1]}
                             </Link>
                           </li>
                           <li
                             className="breadcrumb-item active text-gray-100 flex sm:block hidden"
                             aria-current="page"
                           >
-                            <span className="">{singleblogs.name}</span>
+                            <span className="">{current_url}</span>
                           </li>
                         </ul>
                       </nav>
