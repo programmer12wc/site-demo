@@ -38,31 +38,31 @@ export default function Home() {
 
   const [copied, set_copied] = useState(false);
 
-  const single_blog = () => {
-    axios
-      .get(`https://amiiboapi.com/api/amiibo/?character=${current_url}`)
-      .then((response) => {
-        if (response.data) {
-          set_b_name(response.data.amiibo[0].character);
-          set_b_slug(response.data.amiibo[0].character);
-          set_b_seo_title(response.data.amiibo[0].name);
-          set_b_seo_description(response.data.amiibo[0].gameSeries);
-          set_b_image_url(response.data.amiibo[0].image);
-          set_created_at(response.data.amiibo[0].release.au);
-          set_updated_at(response.data.amiibo[0].release.jp);
-          setSingleblogs(response.data.amiibo[0]);
+  // const single_blog = () => {
+  //   axios
+  //     .get(`https://amiiboapi.com/api/amiibo/?character=${current_url}`)
+  //     .then((response) => {
+  //       if (response.data) {
+  //         set_b_name(response.data.amiibo[0].character);
+  //         set_b_slug(response.data.amiibo[0].character);
+  //         set_b_seo_title(response.data.amiibo[0].name);
+  //         set_b_seo_description(response.data.amiibo[0].gameSeries);
+  //         set_b_image_url(response.data.amiibo[0].image);
+  //         set_created_at(response.data.amiibo[0].release.au);
+  //         set_updated_at(response.data.amiibo[0].release.jp);
+  //         setSingleblogs(response.data.amiibo[0]);
 
-          const product_id = response.data.amiibo[0].head;
-          if (product_id) {
-            set_refrence_desc(response.data.amiibo[0].gameSeries);
-            set_refrence_title(response.data.amiibo[0].character);
-          }
-        }
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  };
+  //         const product_id = response.data.amiibo[0].head;
+  //         if (product_id) {
+  //           set_refrence_desc(response.data.amiibo[0].gameSeries);
+  //           set_refrence_title(response.data.amiibo[0].character);
+  //         }
+  //       }
+  //     })
+  //     .catch(function (error) {
+  //       console.log(error);
+  //     });
+  // };
 
   let sec = [
     {
@@ -126,22 +126,55 @@ export default function Home() {
   ];
 
   useEffect(() => {
-    const id = location.query.id;
-    if (id) {
-      single_blog(id);
+    const single_blog = async () => {
+      try {
+        const response = await axios.get(
+          `https://amiiboapi.com/api/amiibo/?character=${current_url}`
+        );
+        if (response.data && response.data.amiibo.length > 0) {
+          const { amiibo } = response.data;
+          const blogData = amiibo[0];
+          setSingleblogs(blogData);
+          set_b_name(blogData.character);
+          set_b_slug(blogData.character);
+          set_b_seo_title(blogData.name);
+          set_b_seo_description(blogData.gameSeries);
+          set_b_image_url(blogData.image);
+          set_created_at(blogData.release.au);
+          set_updated_at(blogData.release.jp);
+          set_refrence_desc(blogData.gameSeries);
+          set_refrence_title(blogData.character);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    // Check if current_url is defined and not empty
+    if (current_url) {
+      single_blog();
     }
-  }, [location]);
+  }, [current_url]);
+
+  // useEffect(() => {
+  // const id = location.query.id;
+  // if (id) {
+  //   single_blog(id);
+  // }
+  // }, [location]);
 
   return (
     <>
-      {Object.keys(singleblogs).length > 0 && (
+      {Object.keys(singleblogs).length > 0 && current_url && (
         <>
           <Head>
             <title>{b_seo_title}</title>
             <meta name="description" content={b_seo_description} />
             <link
               rel="canonical"
-              href={"https://site-demo-nine.vercel.app/blog/" + current_url}
+              href={`https://site-demo-nine.vercel.app/${
+                pathname.split("/")[1]
+              }/${current_url}`}
             />
             <meta property="og:locale" content="en_US" />
             <meta property="og:image" content={b_image_url} />
@@ -151,9 +184,11 @@ export default function Home() {
             <meta property="og:description" content={b_seo_description} />
             <meta
               property="og:url"
-              content={"https://site-demo-nine.vercel.app/blog/" + b_slug}
+              content={`https://site-demo-nine.vercel.app/${
+                pathname.split("/")[1]
+              }/${current_url}`}
             />
-            <meta property="og:site_name" content="site-demo" />
+            <meta property="og:site_name" content="website" />
             <meta property="og:image:width" content="900" />
             <meta property="og:image:height" content="506" />
             <meta property="twitter:card" content="summary_large_image" />
